@@ -31,7 +31,7 @@ try await websocket.sendAsync(Request(field: "value"))
 
 try? await Task.sleep(nanoseconds: 1 * 1000000000)
 
-// you can close connection manually, however it should automatically close when `Websocket` object is deinitialized
+// close connection
 websocket.close()
 ...
 ```

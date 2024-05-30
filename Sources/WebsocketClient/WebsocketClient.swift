@@ -25,10 +25,6 @@ public class Websocket: NSObject, URLSessionWebSocketDelegate {
         self.receive()
     }
     
-    deinit {
-        self.close()
-    }
-    
     func receive() {
         let workItem = DispatchWorkItem { [weak self] in
             self?.websocket?.receive { result in
