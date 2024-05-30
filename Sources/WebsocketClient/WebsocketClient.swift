@@ -111,6 +111,8 @@ public class Websocket: NSObject, URLSessionWebSocketDelegate {
     
     /// Closes connection
     public func close() {
+        guard !self.closed else { return }
+        
         self.websocket?.cancel()
         self.closed = true
     }
